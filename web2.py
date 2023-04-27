@@ -3,10 +3,10 @@
 import requests
 #크롤링
 from bs4 import BeautifulSoup
+
 url = "https://www.daangn.com/"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
-
 posts = soup.find_all("div", attrs={"class":"card-desc"})
 # 파일에 저장
 f = open("c:\\work\\daangn.txt","wt",encoding="utf-8")
